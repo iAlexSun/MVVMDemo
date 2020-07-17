@@ -13,6 +13,8 @@
 
 @property (nonatomic,strong) PersonView *view;
 
+@property (nonatomic,strong,readwrite) UIColor *backgroundColor;
+
 @end
 
 @implementation PersonViewModel
@@ -24,6 +26,10 @@
     return self;
 }
 
+- (void)changeTitle {
+    self.title = @"修改成功";
+    self.backgroundColor = [UIColor redColor];
+}
 
 - (PersonView *)view {
     if (_view == nil) {

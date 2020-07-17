@@ -50,14 +50,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _fatherViewModel.view.frame   = CGRectMake(16, 100, self.view.frame.size.width - 32, self.view.frame.size.height-200);
-    _personViewModel2.view.frame = CGRectMake(16, 100, 300, 200);
-    _footViewModel2.view.frame    = CGRectMake(0, 30, 200, 40);
-    _handViewModel2.view.frame    = CGRectMake(0, 80, 200, 40);
-    _personViewModel.view.frame  = CGRectMake(16, 350, 300, 200);
-    _footViewModel.view.frame    = CGRectMake(0, 30, 200, 40);
-    _handViewModel.view.frame    = CGRectMake(0, 80, 200, 40);
-    
     _fatherViewModel = [[PersonFatherViewModel alloc] init];
     [self.view addSubview:_fatherViewModel.view];
     
@@ -80,6 +72,14 @@
     _handViewModel = [[PersonHandViewModel alloc] init];
     [_personViewModel.view addSubview:_handViewModel.view];
     
+    
+    _fatherViewModel.view.frame   = CGRectMake(16, 100, self.view.frame.size.width - 32, self.view.frame.size.height-200);
+    _personViewModel2.view.frame = CGRectMake(16, 100, 300, 200);
+    _footViewModel2.view.frame    = CGRectMake(0, 30, 200, 40);
+    _handViewModel2.view.frame    = CGRectMake(0, 80, 200, 40);
+    _personViewModel.view.frame  = CGRectMake(16, 350, 300, 200);
+    _footViewModel.view.frame    = CGRectMake(0, 30, 200, 40);
+    _handViewModel.view.frame    = CGRectMake(0, 80, 200, 40);
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -91,6 +91,7 @@
         
     [self.fatherViewModel sendMsgToSubViewModel:@selector(test)];
     [self.fatherViewModel sendMsgToSubViewModel:@selector(test2)];
+    [self.fatherViewModel sendMsgToSubViewModel:@selector(changeTitle)];
 }
 
 @end
